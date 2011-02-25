@@ -3,7 +3,7 @@
 #   http://rubygems.rubyforge.org/rubygems-update/Gem/Specification.html
 spec = Gem::Specification.new do |s|
   s.name = 'rack-webauth'
-  s.version = '0.1.2'
+  s.version = '0.1.3'
   s.summary = 'Rack middleware to acquire authentication information froma "Stanford WebAuth system.'
   s.authors = ['Niklas E. Cathor']
   s.email = ['niklas@brueckenschlaeger.de']
