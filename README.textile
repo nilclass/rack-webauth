@@ -3,6 +3,10 @@ h1. Rack::Webauth
 
 Rack middleware to acquire authentication information from a "Stanford WebAuth":http://webauth.stanford.edu/ system.
 
+h2. Documentation
+
+Is available from "here":http://rubydoc.info/github/nilclass/rack-webauth/master/frames.
+
 h2. Usage in any rack based app:
 
 <pre>
