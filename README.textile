@@ -41,3 +41,21 @@ h2. WebAuthOptional
 
 If you want to make your site publicly available, but still enable WebAuth and have that information
 in your Rails application, you need a patch to WebAuth. It is available from "here":https://mailman.stanford.edu/pipermail/webauth-info/2011-January/000705.html. Also see the corresponding "thread":https://mailman.stanford.edu/pipermail/webauth-info/2011-January/thread.html#699 for more information.
+
+h2. License Information
+
+Copyright (C) 2011 Niklas E. Cathor
+
+rack-webauth is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation, either version 3 of
+the License, or (at your option) any later version.
+
+rack-webauth is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with rack-webauth. If not, see "www.gnu.org/licenses":http://www.gnu.org/licenses/
+
