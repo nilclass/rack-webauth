@@ -71,14 +71,37 @@ class Rack::Webauth
        (respond_to?(:request) &&
         request.respond_to?(:env) ?
         request.env[NS] :
-        (raise "Neither 'env' nor 'request.env' available. Can't access webauth-info")))
+        (raise Rack::Webauth::Info::NotAvailable.new("Neither 'env' nor 'request.env' available. Can't access webauth-info"))))
+    end
+  end
+
+  # A default User object, to easily access attributes.
+  # Used by WardenStrategy.
+  class User
+    attr :login
+
+    def initialize(webauth_info)
+      @webauth_info = webauth_info
+      @login = @webauth_info.login
+    end
+
+    def [](attribute)
+      @webauth_info.attributes[attribute.to_s.upcase]
     end
   end
 
   # Detects & provides webauth related information conveniently from
   # the rack environment.
+  #
+  # See README and Rack::Webauth::Helpers for usage information & examples.
+  #
   class Info
+    # Exception raised by Rack::Webauth::Helpers if webauth
+    # cannot be accessed / is not available.
+    class NotAvailable < Exception ; end
+
     attr :login
+    attr :env
     # explains itself.
     def logged_in? ; @logged_in ; end
 
@@ -184,6 +207,7 @@ class Rack::Webauth
         else
           # key isn't webauthldap related
         end
+        next(attrs)
       end
     end
   end
