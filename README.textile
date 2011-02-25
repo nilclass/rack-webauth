@@ -1,0 +1,39 @@
+
+h1. Rack::Webauth
+
+Rack middleware to acquire authentication information from a "Stanford WebAuth":http://webauth.stanford.edu/ system.
+
+h2. Usage in any rack based app:
+
+<pre>
+  # In a rack environment:
+  use(Rack::Webauth)
+
+  # In a view or controller:
+  include(Rack::Webauth::Helpers)
+
+  # In a before filter or helper
+  # or other middleware:
+  @current_user = User.find_by_login(webauth.login)
+
+  # or whatever...
+</pre>
+
+h2. Usage in rails:
+
+<pre>
+  # config/application.rb:
+    require 'rack-webauth'
+    config.middleware.use(Rack::Webauth)
+
+  # ApplicationController:
+    include(Rack::Webauth::Helpers)
+    # optionally:
+    delegate :logged_in?, :to => :webauth
+</pre>
+
+
+h2. WebAuthOptional
+
+If you want to make your site publicly available, but still enable WebAuth and have that information
+in your Rails application, you need a patch to WebAuth. It is available from "here":https://mailman.stanford.edu/pipermail/webauth-info/2011-January/000705.html. Also see the corresponding "thread":https://mailman.stanford.edu/pipermail/webauth-info/2011-January/thread.html#699 for more information.

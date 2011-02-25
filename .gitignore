@@ -1,0 +1,7 @@
+*~
+\#*
+.\#*
+*_flymake.rb
+tmp/
+log/*.log
+*.sqlite3
