@@ -43,21 +43,14 @@ class Rack::Webauth::WardenStrategy < Warden::Strategies::Base
     include Rack::Webauth::Helpers
 
     def valid?
-      webauth
-      true
-    rescue Rack::Webauth::Info::NotAvailable
-      false
+      webauth.logged_in?
     end
 
     def authenticate!
-      if webauth.logged_in?
-        if user = instance_eval(&self.class.finder)
-          success!(user)
-        else
-          fail!(:invalid)
-        end
+      if user = instance_eval(&self.class.finder)
+        success!(user)
       else
-        fail!
+        fail!(:invalid)
       end
     end
   end
