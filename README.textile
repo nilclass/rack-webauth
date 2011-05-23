@@ -1,7 +1,6 @@
-
 h1. Rack::Webauth
 
-Rack middleware to acquire authentication information from a "Stanford WebAuth":http://webauth.stanford.edu/ system.
+Rack middleware to acquire authentication information from a "Stanford WebAuth":http://www.stanford.edu/services/webauth/ system.
 
 h2. Documentation
 
