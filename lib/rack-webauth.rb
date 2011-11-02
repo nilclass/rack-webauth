@@ -131,7 +131,7 @@ class Rack::Webauth
     #
     # TOOD: implement detection of multiple privgroups
     def privgroup
-      @privgroup ||= env['WEABUTH_LDAPPRIVGROUP']
+      @privgroup ||= env['WEBAUTH_LDAPPRIVGROUP']
     end
 
     # Rule ("Require" statement) that authenticated this user
