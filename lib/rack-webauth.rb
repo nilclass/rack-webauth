@@ -111,7 +111,7 @@ class Rack::Webauth
     def initialize(env)
       @env = env
       @login = (env["WEBAUTH_USER"] || env["REMOTE_USER"])
-      @logged_in = (@login && @login.any? && @login != ANONYMOUS)
+      @logged_in = (@login && !@login.empty? && @login != ANONYMOUS)
       # reset login if it was "" or ANONYMOUS
       @login = nil unless @logged_in
     end
